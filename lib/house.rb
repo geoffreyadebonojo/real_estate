@@ -20,6 +20,19 @@ class House
         @rooms << room_object
     end
 
+                            # :key
+    def rooms_from_category(room_type)
+        @rooms.select do |room|
+            room.category == room_type
+        end
+    end
 
+    def area
+        house_area = 0
+        @rooms.each do |room|
+            house_area += room.area
+        end
+        house_area
+    end    
 end 
 
